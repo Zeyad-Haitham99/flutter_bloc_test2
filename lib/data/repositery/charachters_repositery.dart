@@ -6,7 +6,7 @@ class CharachterRepositery {
 
   CharachterRepositery(this.charachterResponse);
   Future<List<Charachter>> getAllCharachter() async {
-    final charachters = await charachterResponse.getAllCharachter();
+     final charachters = await charachterResponse.getAllCharachter();
     return charachters!
         .map((charachter) => Charachter.fromJson(charachter))
         .toList();

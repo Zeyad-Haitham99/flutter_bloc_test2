@@ -1,6 +1,6 @@
 class Charachter {
-   int? charId;
   String? name;
+  int? charId;
   String? birthday;
   List<dynamic>? occupation;
   String? img;
@@ -11,18 +11,18 @@ class Charachter {
   String? category;
   List<dynamic>? betterCallSaulAppearance;
 
-  Charachter(
-      {this.charId,
-      this.name,
-      this.birthday,
-      this.occupation,
-      this.img,
-      this.status,
-      this.nickname,
-      this.appearance,
-      this.portrayed,
-      this.category,
-      this.betterCallSaulAppearance});
+  // Charachter(
+  //     {this.charId,
+  //     this.name,
+  //     this.birthday,
+  //     this.occupation,
+  //     this.img,
+  //     this.status,
+  //     this.nickname,
+  //     this.appearance,
+  //     this.portrayed,
+  //     this.category,
+  //     this.betterCallSaulAppearance});
 
   Charachter.fromJson(Map<String, dynamic> json) {
     charId = json['char_id'];
@@ -38,19 +38,19 @@ class Charachter {
     betterCallSaulAppearance = json['betterCallSaulAppearance'];
   }
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['char_id'] = this.charId;
-    data['name'] = this.name;
-    data['birthday'] = this.birthday;
-    data['occupation'] = this.occupation;
-    data['img'] = this.img;
-    data['status'] = this.status;
-    data['nickname'] = this.nickname;
-    data['appearance'] = this.appearance;
-    data['portrayed'] = this.portrayed;
-    data['category'] = this.category;
-    data['betterCallSaulAppearance'] = this.betterCallSaulAppearance;
-    return data;
-  }
+  // Map<String, dynamic> toJson() {
+  //   final Map<String, dynamic> data = new Map<String, dynam
+  //   data['char_id'] = this.charId;
+  //   data['name'] = this.name;
+  //   data['birthday'] = this.birthday;
+  //   data['occupation'] = this.occupation;
+  //   data['img'] = this.img;
+  //   data['status'] = this.status;
+  //   data['nickname'] = this.nickname;
+  //   data['appearance'] = this.appearance;
+  //   data['portrayed'] = this.portrayed;
+  //   data['category'] = this.category;
+  //   data['betterCallSaulAppearance'] = this.betterCallSaulAppearance;
+  //   return data;
+  // }
 }

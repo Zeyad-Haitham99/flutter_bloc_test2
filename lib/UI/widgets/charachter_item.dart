@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc_test2/constants/strings.dart';
 import 'package:flutter_bloc_test2/data/models/charachters.dart';
 
 class CharachterItem extends StatelessWidget {
@@ -15,33 +16,42 @@ class CharachterItem extends StatelessWidget {
         color: Colors.white,
         borderRadius: BorderRadius.circular(8),
       ),
-      child: GridTile(
-        child: Container(
-          color: Colors.grey,
-          child: charachter.img!.isNotEmpty
-              ? FadeInImage.assetNetwork(
-                  width: double.infinity,
-                  height: double.infinity,
-                  fit: BoxFit.cover,
-                  placeholder: 'assets/images/loading.gif',
-                  image: charachter.img!)
-              : Image.asset('assets/images/image.webp'),
-        ),
-        footer: Container(
-          padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-          width: double.infinity,
-          color: Colors.black45,
-          alignment: Alignment.bottomCenter,
-          child: Text(
-            '${charachter.name}',
-            style: TextStyle(
-                height: 1.3,
-                fontSize: 16,
-                color: Colors.white,
-                fontWeight: FontWeight.bold),
-                overflow: TextOverflow.ellipsis,
-                maxLines: 2,
-                textAlign: TextAlign.center,
+      child: InkWell(
+        onTap: () {
+          Navigator.pushNamed(context, charachterDetailesScreen,
+              arguments: charachter);
+        },
+        child: GridTile(
+          child: Hero(
+            tag: charachter.charId!,
+            child: Container(
+              color: Colors.grey,
+              child: charachter.img!.isNotEmpty
+                  ? FadeInImage.assetNetwork(
+                      width: double.infinity,
+                      height: double.infinity,
+                      fit: BoxFit.cover,
+                      placeholder: 'assets/images/loading.gif',
+                      image: charachter.img!)
+                  : Image.asset('assets/images/image.webp'),
+            ),
+          ),
+          footer: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+            width: double.infinity,
+            color: Colors.black45,
+            alignment: Alignment.bottomCenter,
+            child: Text(
+              '${charachter.name}',
+              style: const TextStyle(
+                  height: 1.3,
+                  fontSize: 16,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold),
+              overflow: TextOverflow.ellipsis,
+              maxLines: 2,
+              textAlign: TextAlign.center,
+            ),
           ),
         ),
       ),
