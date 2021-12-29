@@ -15,7 +15,6 @@ class _CharachtersScreenState extends State<CharachtersScreen> {
   late List<Charachter> allCharachters;
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     allCharachters =
         BlocProvider.of<BreakingbadCubit>(context).getallCharachters();
